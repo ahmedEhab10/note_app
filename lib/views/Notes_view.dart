@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:note_app/const.dart';
 import 'package:note_app/widgets/Cstom_TextFaild.dart';
 import 'package:note_app/widgets/Custom_botton.dart';
-import 'package:note_app/widgets/Note_Widget.dart';
 import 'package:note_app/widgets/Notes_List_view.dart';
 import 'package:note_app/widgets/custom_appbar.dart';
 
@@ -24,7 +23,7 @@ class NotesView extends StatelessWidget {
                 return AddNoteButtomSheet();
               });
         },
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.black,
         ),
@@ -39,7 +38,7 @@ class NotesView extends StatelessWidget {
             CustomAppbar(
               title: 'Notes',
               icon: Icons.search,
-            ), //-------------------------------------------
+            ),
             Expanded(child: NotesListView()),
           ],
         ),
