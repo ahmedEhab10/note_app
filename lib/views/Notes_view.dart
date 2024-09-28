@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/const.dart';
 import 'package:note_app/widgets/Cstom_TextFaild.dart';
+import 'package:note_app/widgets/Custom_botton.dart';
 import 'package:note_app/widgets/Note_Widget.dart';
 import 'package:note_app/widgets/Notes_List_view.dart';
 import 'package:note_app/widgets/custom_appbar.dart';
@@ -12,6 +14,7 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: KPrimaryColor,
         onPressed: () {
           showModalBottomSheet(
               shape: ContinuousRectangleBorder(
@@ -21,7 +24,10 @@ class NotesView extends StatelessWidget {
                 return AddNoteButtomSheet();
               });
         },
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -44,15 +50,33 @@ class AddNoteButtomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return const Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 24,
-          ),
-          CstomTextfaild(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 24,
+            ),
+            CstomTextfaild(
+              hint: 'Ttle',
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            CstomTextfaild(
+              hint: 'Contet',
+              maxline: 5,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Custombotton(),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       ),
     );
   }
