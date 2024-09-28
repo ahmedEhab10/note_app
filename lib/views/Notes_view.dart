@@ -29,14 +29,17 @@ class NotesView extends StatelessWidget {
           color: Colors.black,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+      body: const Padding(
+        padding: EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
             SizedBox(
               height: 40,
             ),
-            CustomAppbar(),
+            CustomAppbar(
+              title: 'Notes',
+              icon: Icons.search,
+            ), //-------------------------------------------
             Expanded(child: NotesListView()),
           ],
         ),
