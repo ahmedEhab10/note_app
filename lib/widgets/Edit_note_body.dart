@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/Cstom_TextFaild.dart';
 import 'package:note_app/widgets/custom_appbar.dart';
 
 class EditNoteBody extends StatelessWidget {
@@ -9,7 +10,7 @@ class EditNoteBody extends StatelessWidget {
     return const Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
-        children: [
+        children: const [
           SizedBox(
             height: 40,
           ),
@@ -17,6 +18,19 @@ class EditNoteBody extends StatelessWidget {
             title: 'Edit Note',
             icon: Icons.check,
           ),
+          SizedBox(
+            height: 50,
+          ),
+          CstomTextfaild(
+            hint: 'Title',
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          CstomTextfaild(
+            hint: 'Content',
+            maxline: 5,
+          )
         ],
       ),
     );
