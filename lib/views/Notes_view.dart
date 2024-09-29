@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/const.dart';
 import 'package:note_app/widgets/Cstom_TextFaild.dart';
+import 'package:note_app/widgets/Custom_AddNoteButtomSheet.dart';
 import 'package:note_app/widgets/Custom_botton.dart';
 import 'package:note_app/widgets/Notes_List_view.dart';
 import 'package:note_app/widgets/custom_appbar.dart';
@@ -40,43 +41,6 @@ class NotesView extends StatelessWidget {
               icon: Icons.search,
             ),
             Expanded(child: NotesListView()),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class AddNoteButtomSheet extends StatelessWidget {
-  const AddNoteButtomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 24,
-            ),
-            CstomTextfaild(
-              hint: 'Ttle',
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            CstomTextfaild(
-              hint: 'Contet',
-              maxline: 5,
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Custombotton(),
-            SizedBox(
-              height: 20,
-            ),
           ],
         ),
       ),
