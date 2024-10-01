@@ -12,15 +12,16 @@ class notewidget extends StatelessWidget {
         Navigator.pushNamed(context, EditNoteView.id);
       },
       child: Container(
-        padding: EdgeInsets.only(top: 24, bottom: 24, left: 24, right: 24),
+        padding:
+            const EdgeInsets.only(top: 24, bottom: 24, left: 24, right: 24),
         decoration: BoxDecoration(
             color: color1, borderRadius: BorderRadius.circular(16)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              contentPadding: EdgeInsets.all(0),
-              title: Text(
+              contentPadding: const EdgeInsets.all(0),
+              title: const Text(
                 'Flutter Tips',
                 style: TextStyle(color: Colors.black, fontSize: 30),
               ),
@@ -34,7 +35,7 @@ class notewidget extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete,
                   color: Colors.black,
                   size: 30,
