@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/cubits/Notes_cubit/notes_cubit.dart';
+import 'package:note_app/models/NoteModel.dart';
 import 'package:note_app/widgets/Note_Widget.dart';
 
 class NotesListView extends StatelessWidget {
@@ -21,13 +24,21 @@ class NotesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 6.0),
-        child: notewidget(
-          color1: data[Random().nextInt(10)],
-        ),
-      );
-    });
+    return BlocBuilder<NotesCubit, NotesState>(
+      builder: (context, state) {
+        List<Notemodel> Notes =
+            BlocProvider.of<NotesCubit>(context).Notes ?? [];
+        return ListView.builder(
+            itemCount: Notes.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6.0),
+                child: notewidget(
+                  color1: data[Random().nextInt(10)],
+                ),
+              );
+            });
+      },
+    );
   }
 }
