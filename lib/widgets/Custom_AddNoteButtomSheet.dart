@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:note_app/cubits/Add_Note_Cubit/add_note_cubit_cubit.dart';
+import 'package:note_app/cubits/Notes_cubit/notes_cubit.dart';
 import 'package:note_app/widgets/Add_Note_form.dart';
 
 class Addnotebuttomsheet extends StatelessWidget {
@@ -19,6 +20,7 @@ class Addnotebuttomsheet extends StatelessWidget {
         child: BlocConsumer<AddNoteCubitCubit, AddNoteCubitState>(
           listener: (context, state) {
             if (state is AddNoteCubitSccusses) {
+              BlocProvider.of<NotesCubit>(context).GetAllNotes();
               Navigator.pop(context);
             }
             if (state is AddNoteCubitFulier) {

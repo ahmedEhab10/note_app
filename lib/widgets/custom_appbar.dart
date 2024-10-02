@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:note_app/widgets/custom_serchbutton.dart';
 
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.title, required this.icon});
+  CustomAppbar(
+      {super.key, required this.title, required this.icon, this.ontap});
   final String title;
   final IconData icon;
+  void Function()? ontap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,6 +17,7 @@ class CustomAppbar extends StatelessWidget {
           style: TextStyle(fontSize: 35),
         ),
         CustomSerchbutton(
+          ontap: ontap,
           icon: icon,
         )
       ],

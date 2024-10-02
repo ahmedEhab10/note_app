@@ -41,11 +41,11 @@ class _NotesViewState extends State<NotesView> {
           color: Colors.black,
         ),
       ),
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             CustomAppbar(
