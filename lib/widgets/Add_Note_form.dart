@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/cubits/Add_Note_Cubit/add_note_cubit_cubit.dart';
 import 'package:note_app/models/NoteModel.dart';
 import 'package:note_app/widgets/Cstom_TextFaild.dart';
@@ -16,6 +17,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   String? Title, subTitle;
   GlobalKey<FormState> FormKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -55,7 +57,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     var note = Notemodel(
                         title: Title!,
                         suptitle: subTitle!,
-                        date: DateTime.now().toString(),
+                        date: DateTime.now().toString().substring(0, 10),
                         color: Colors.blueGrey.value);
                     BlocProvider.of<AddNoteCubitCubit>(context).addnote(note);
                   } else {
