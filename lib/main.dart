@@ -8,6 +8,7 @@ import 'package:note_app/models/NoteModel.dart';
 import 'package:note_app/simple_bloc_observer.dart';
 import 'package:note_app/views/Edit_Note_View.dart';
 import 'package:note_app/views/Notes_view.dart';
+import 'package:note_app/views/favorite_Notes.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -30,6 +31,7 @@ class NoteApp extends StatelessWidget {
         theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
         routes: {
           NotesView.id: (context) => NotesView(),
+          FavoriteNotes.id: (context) => FavoriteNotes(),
         },
         initialRoute: NotesView.id,
       ),
